@@ -37,8 +37,10 @@ def emotionDetector():
         f"'sadness': {sadness}. "
         f"The dominant emotion is {dominant_emotion}."
     )
-
-    return result
+    if response is None:
+        return "Invalid text! Please try again.", 400
+    else:
+        return result
 
 
 if __name__ == "__main__":
